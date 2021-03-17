@@ -28,7 +28,7 @@ if __name__ == "__main__":
 		bid = input("What is your bid?\n")
 		if bid == "q": break
 
-		bid = float_check(bid) # One thing that you can't do, is declare a non-integer that isn't q, because then you can no longer exist until you bid.
+		bid = float_check(bid) # One thing that you can't do, is declare a non-integer that isn't q, because then you can no longer exit until you bid.
 
 		# If this is the first iteration OR a bid requested was higher than the current bid
 		if (not bids or not names) or (bid > bids[len(bids)-1]):
