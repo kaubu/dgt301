@@ -1,5 +1,7 @@
 import sys
 
+GOODBYE_MESSAGE = "Goodbye! Thank you for coming to the auction."
+
 def float_check(n) -> float:
 	float_num = n
 
@@ -41,9 +43,15 @@ if __name__ == "__main__":
 		
 		print("Bid succesful.")
 	
+	if not bids or not names: 
+		print(GOODBYE_MESSAGE)
+		sys.exit()
+	
 	if bids[len(bids)-1] >= reserve_price: print(f"Congratulations {names[len(names)-1]}, you win! Your bid of ${bids[len(bids)-1]:.2f} met the reserve of ${reserve_price:.2f}.")
 	else: print(f"Unfortunately the reserve price of ${reserve_price:.2f} was not met, so nobody won the item.")
 
 	print("History of bets:")
 
 	for i in range(0, len(bids)): print(f"{names[i]} bid ${bids[i]:.2f}")
+
+	print(GOODBYE_MESSAGE)
