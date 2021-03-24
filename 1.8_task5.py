@@ -1,7 +1,7 @@
 import datetime
 
 class Person:
-	def __init__(self, name, birth_year, is_male: bool):
+	def __init__(self, name, birth_year, is_male):
 		self.name = name
 		self.birth_year = birth_year
 		self.is_male = is_male
@@ -12,8 +12,7 @@ class Person:
 		>>> p.get_age(2013)
 		46
 		"""
-		age = this_year - self.birth_year
-		return age
+		return this_year - self.birth_year
 	
 	def print_info(self):
 		now = datetime.datetime.now()
