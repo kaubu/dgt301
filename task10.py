@@ -47,8 +47,7 @@ if __name__ == "__main__":
 			lowest_class = school
 			continue
 		
-		if school.calculate_average_pupils() < lowest_class.calculate_average_pupils():
-			lowest_class = school
+		if school.calculate_average_pupils() < lowest_class.calculate_average_pupils(): lowest_class = school
 	
 	print("\nClass with the lowest class size:")
 	lowest_class.show_info()
