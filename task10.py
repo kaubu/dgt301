@@ -33,7 +33,7 @@ def collect_data():
 
 if __name__ == "__main__":
 	schools = []
-	for i in range(5):
+	for i in range(2):
 		collect_data()
 		schools.append(School(school_name, school_pupils, school_classrooms))
 	
