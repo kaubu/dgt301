@@ -8,9 +8,7 @@ if __name__ == "__main__":
 	
 	for i in range(1, 36):
 		actor = Actor()
-		if i % 5 == 0 and i != 0: # If i is not 0, and is divisible by 5
-			actor.set_female()
+		if i % 5 == 0 and i != 0: actor.set_female() # If i is not 0, and is divisible by 5, set gender to female
 		actors.append(actor)
 	
-	for actor in actors:
-		actor.show_gender()
+	for actor in actors: actor.show_gender()
