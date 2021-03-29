@@ -10,6 +10,6 @@ if __name__ == "__main__":
 	
 	for i, actor in enumerate(actors):
 		print(i)
-		if (i + 1) % 5 == 0: actors[i].set_female() # If i is not 0, and is divisible by 5, set gender to female
+		if (i + 1) % 5 == 0: actors[i].set_female() # If i is divisible by 5, set gender to female
 	
 	for actor in actors: actor.show_gender()
