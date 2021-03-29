@@ -6,11 +6,8 @@ class House:
 		self.asking_price = asking_price
 		self.area = area
 
-	def calculate_price_per_area(self) -> float:
-		return self.asking_price / self.area
-	
-	def calculate_price_per_room(self) -> float:
-		return self.asking_price / self.num_bedrooms
+	def calculate_price_per_area(self) -> float: return self.asking_price / self.area
+	def calculate_price_per_room(self) -> float: return self.asking_price / self.num_bedrooms
 	
 	def show_info(self):
 		"""
