@@ -22,7 +22,7 @@ class DailyOrder:
 		while name.upper() != "F":
 			name = input("What is your customer's name? (Type \"F\" to finish)\n>> ")
 			if name.upper() != "F":
-				egg_orders.append(EggOrder(name, self.read_int(f"How many eggs does {name} wish to order?\n>> ")))
+				self.egg_orders.append(EggOrder(name, self.read_int(f"How many eggs does {name} wish to order?\n>> ")))
 
 	def show_orders(self):
 		"""
@@ -55,7 +55,7 @@ Dozens required: {self.get_dozens(total_eggs)}""")
 		if num_eggs % 12 != 0: num_dozens += 1 # If num_eggs is not divisible by 12, add one to num_dozens
 		return num_dozens
 
-	def read_int(prompt: int) -> int:
+	def read_int(self, prompt: int) -> int:
 		while True:
 			try:
 				choice = int(input(prompt))
@@ -66,10 +66,15 @@ Dozens required: {self.get_dozens(total_eggs)}""")
 
 # Main
 if __name__ == "__main__":
-	a = EggOrder("bob", 18)
-	print(f"{a.calc_price()}")
-	b = EggOrder("alice", 27)
-	c = EggOrder("michael", 7)
-	d = DailyOrder("Monday", [a, b, c])
-	d.show_orders()
-	d.show_report()
+	# a = EggOrder("bob", 18)
+	# print(f"{a.calc_price()}")
+	# b = EggOrder("alice", 27)
+	# c = EggOrder("michael", 7)
+	# d = DailyOrder("Monday", [a, b, c])
+	# d.show_orders()
+	# d.show_report()
+
+	daily_order = DailyOrder(input("What day is it today?\n>> "), [])
+	daily_order.get_orders()
+	daily_order.show_orders()
+	daily_order.show_report()
