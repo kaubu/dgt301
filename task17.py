@@ -21,23 +21,20 @@ class DailyOrder:
 		name = ""
 		while name.upper() != "F":
 			name = input("What is your customer's name? (Type \"F\" to finish)\n>> ")
-			if name.upper() != "F":
-				self.egg_orders.append(EggOrder(name, self.read_int(f"How many eggs does {name} wish to order?\n>> ")))
+			if name.upper() != "F": self.egg_orders.append(EggOrder(name, self.read_int(f"How many eggs does {name} wish to order?\n>> ")))
 
 	def show_orders(self):
 		"""
 		Calculates price for each egg order, and displays order information - name, number of eggs, price
 		"""
 		print("Showing orders...")
-		for egg_order in self.egg_orders:
-			print(egg_order)
+		for egg_order in self.egg_orders: print(egg_order)
 	
 	def show_report(self):
 		if len(self.egg_orders) == 0: print("No orders.")
 		else:
 			total_eggs = 0
-			for egg_order in self.egg_orders: # Get index i through list
-				total_eggs += egg_order.num_eggs
+			for egg_order in self.egg_orders: total_eggs += egg_order.num_eggs # Get index i through list
 			
 			print(f"""Summary:
 Total eggs: {total_eggs}
@@ -60,8 +57,7 @@ Dozens required: {self.get_dozens(total_eggs)}""")
 			try:
 				choice = int(input(prompt))
 				break
-			except ValueError:
-				print("Not a valid integer!")
+			except ValueError: print("Not a valid integer!")
 		return choice
 
 # Main
