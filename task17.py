@@ -62,14 +62,6 @@ Dozens required: {self.get_dozens(total_eggs)}""")
 
 # Main
 if __name__ == "__main__":
-	# a = EggOrder("bob", 18)
-	# print(f"{a.calc_price()}")
-	# b = EggOrder("alice", 27)
-	# c = EggOrder("michael", 7)
-	# d = DailyOrder("Monday", [a, b, c])
-	# d.show_orders()
-	# d.show_report()
-
 	daily_order = DailyOrder(input("What day is it today?\n>> "), [])
 	daily_order.get_orders()
 	daily_order.show_orders()
