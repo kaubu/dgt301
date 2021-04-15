@@ -52,7 +52,7 @@ class Quiz:
 		for q in self.questions: # for each question object in the list of questions
 			print( q.question ) # print the question
 			for i in range(len(q.answers)): # print the possible answers
-				print("\t" + str(i ) + "\t" + q.answers[i])
+				print("\t" + str(i + 1) + ":\t" + q.answers[i])
 			print()
 			self.process_answer(q) # get answer from user and give appropriate response
 		
@@ -70,7 +70,7 @@ class Quiz:
 		while not 0 <= user_answer < len(q.answers):
 			a = input("Please type the number of your answer here: ")
 			try:
-				user_answer = int(a) # if input is not an int we go to the except clause
+				user_answer = int(a) - 1 # if input is not an int we go to the except clause
 				if not 0 <= user_answer < len(q.answers):
 				# input is not in range no further action is taken (the while loop will repeat)
 
@@ -89,13 +89,13 @@ class Quiz:
 	
 	def display_results(self):
 		percentage_correct = (self.questions_correct / self.num_questions) * 100
-		if percentage_correct <= 33:
-			print("Better luck next time!")
-		elif percentage_correct <= 66:
-			print("Nice try!")
-		else:
-			print("Well done!")
-		print(f"You scored {self.questions_correct}/{self.num_questions} correct. This means you had an accuracy of {percentage_correct:.2f}%.")
+
+		if percentage_correct <= 25: print("Better luck next time!")
+		elif percentage_correct <= 50: print("Nice try!")
+		elif percentage_correct <= 75: print("Very good!")
+		else: print("Congratulations!")
+
+		print(f"You scored {self.questions_correct}/{self.num_questions} correct. That means you had an accuracy of {percentage_correct:.2f}%.")
 
 #main routine
 if __name__ == "__main__":
