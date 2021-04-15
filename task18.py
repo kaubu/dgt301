@@ -39,6 +39,7 @@ class Quiz:
 			Question("Who wrote 'The Picture of Dorian Gray?", "Oscar Wilde", ["George Bernard Shaw", "Evelyn Waugh", "Somerset Maugham"]),
 			Question("What is the capital of Kenya?", "Nairobi", ["N'Djamena", "Cape Town", "Djibouti"]),
 			Question("What programming language was voted \"most-loved\" language on Stack Overflow for 5 years in a row?", "Rust", ["Python", "C++", "Javascript"]),
+			Question("ABCD?", "D", ["A", "B", "C"]),
 		]
 
 		self.questions_correct = 0
@@ -95,7 +96,10 @@ class Quiz:
 		elif percentage_correct <= 75: print("Very good!")
 		else: print("Congratulations!")
 
-		print(f"You scored {self.questions_correct}/{self.num_questions} correct. That means you had an accuracy of {percentage_correct:.2f}%.")
+		if percentage_correct % 1 == 0: percentage = f"{percentage_correct:.0f}"
+		else: percentage = f"{percentage_correct:.2f}"
+
+		print(f"You scored {self.questions_correct}/{self.num_questions} correct. That means you had an accuracy of {percentage}%.")
 
 #main routine
 if __name__ == "__main__":
