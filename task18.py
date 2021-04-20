@@ -39,7 +39,6 @@ class Quiz:
 			Question("Who wrote 'The Picture of Dorian Gray?", "Oscar Wilde", ["George Bernard Shaw", "Evelyn Waugh", "Somerset Maugham"]),
 			Question("What is the capital of Kenya?", "Nairobi", ["N'Djamena", "Cape Town", "Djibouti"]),
 			Question("What programming language was voted \"most-loved\" language on Stack Overflow for 5 years in a row?", "Rust", ["Python", "C++", "Javascript"]),
-			Question("ABCD?", "D", ["A", "B", "C"]),
 		]
 
 		self.questions_correct = 0
