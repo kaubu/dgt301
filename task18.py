@@ -28,18 +28,13 @@ class Quiz:
 	graphical user interface, and access to files of multiple questions and answers. This class is supported by the
 	class Question. Instances of Question represent the individual questions (and answers of the quiz). In this
 	version of the program there are only two questions. """
-	def __init__(self):
+	def __init__(self, questions):
 		""" Creates a list containing two Question objects by passing the Question constructor
 		- a string representing the question
 		- a string representing the correct answer
 		- a list of strings representing the dummy answers
 		"""
-		self.questions = [
-			Question("What is the capital of Mongolia?", "Ulan Bator", ["Vladivostok", "Astana","Lhasa"]),
-			Question("Who wrote 'The Picture of Dorian Gray?", "Oscar Wilde", ["George Bernard Shaw", "Evelyn Waugh", "Somerset Maugham"]),
-			Question("What is the capital of Kenya?", "Nairobi", ["N'Djamena", "Cape Town", "Djibouti"]),
-			Question("What programming language was voted \"most-loved\" language on Stack Overflow for 5 years in a row?", "Rust", ["Python", "C++", "Javascript"]),
-		]
+		self.questions = questions
 
 		self.questions_correct = 0
 		self.num_questions = len(self.questions)
@@ -102,5 +97,11 @@ class Quiz:
 
 #main routine
 if __name__ == "__main__":
-	text_quiz = Quiz()
-	text_quiz.take_quiz()
+	test_quiz = Quiz([
+		Question("What is the capital of Mongolia?", "Ulan Bator", ["Vladivostok", "Astana","Lhasa"]),
+		Question("Who wrote 'The Picture of Dorian Gray?", "Oscar Wilde", ["George Bernard Shaw", "Evelyn Waugh", "Somerset Maugham"]),
+		Question("What is the capital of Kenya?", "Nairobi", ["N'Djamena", "Cape Town", "Djibouti"]),
+		Question("What programming language was voted \"most-loved\" language on Stack Overflow for 5 years in a row?", "Rust", ["Python", "C++", "Javascript"]),
+	])
+	
+	test_quiz.take_quiz()
