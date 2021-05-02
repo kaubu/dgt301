@@ -63,6 +63,6 @@ class Task1RadioButton:
 if __name__ == "__main__":
 	root = Tk()
 	root.title("Cat descriptions")
-	root.geometry("300x160")
+	root.geometry("300x180")
 	cats = Task1RadioButton(root)
 	root.mainloop()
